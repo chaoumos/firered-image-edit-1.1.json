@@ -14,6 +14,7 @@ FROM runpod/worker-comfyui:5.5.1-base
 # Could not resolve unknown_registry custom node: PrimitiveFloat (no aux_id) -- skipped
 # Could not resolve unknown_registry custom node: PrimitiveFloat (no aux_id) -- skipped
 # Could not resolve unknown_registry custom node: ComfySwitchNode (no aux_id) -- skipped
+rUN cd /comfyui && git pull
 
 # download models into comfyui
 RUN comfy model download --url https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.0-ComfyUI/resolve/main/qwen2.5vl-7b-bf16.safetensors --relative-path models/text_encoders --filename qwen2.5vl-7b-bf16.safetensors
